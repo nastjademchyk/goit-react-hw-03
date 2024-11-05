@@ -3,7 +3,7 @@ import React from "react";
 import { FaUser } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 
-const Contact = ({ name, number }) => {
+const Contact = ({ name, number, onDelete, id }) => {
   return (
     <div className={s.container}>
       <div className={s.main}>
@@ -16,7 +16,7 @@ const Contact = ({ name, number }) => {
           <p>{number}</p>
         </div>
       </div>
-      <button className={s.btn} type="submit">
+      <button className={s.btn} type="submit" onClick={() => onDelete(id)}>
         Delete
       </button>
     </div>
