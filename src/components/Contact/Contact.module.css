@@ -1,0 +1,15 @@
+.name {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.number {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.container {
+  border-radius: 30%;
+  border: 5px;
+}
