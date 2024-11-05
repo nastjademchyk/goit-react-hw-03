@@ -23,9 +23,10 @@
 .main {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 .btn {
   cursor: pointer;
   display: flex;
-  margin-left: 35px;
+  margin-left: 5px;
 }
