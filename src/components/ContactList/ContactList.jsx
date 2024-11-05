@@ -4,9 +4,9 @@ import React from "react";
 
 const ContactList = ({ contacts }) => {
   return (
-    <ul>
+    <ul className={s.list}>
       {contacts.map((contact) => (
-        <li key={contact.id}>
+        <li className={s.item} key={contact.id}>
           <Contact {...contact} />
         </li>
       ))}
