@@ -6,15 +6,19 @@ import SearchBox from "./SearchBox/SearchBox";
 import initialContacts from "./contacts.json";
 
 function App() {
-  const [contacts, setContacts] = useState(initialContacts);
-  // const [contacts, setContacts] = useState(() => {
-  //   const savedContacts = window.localStorage.getItem("saved-contacts");
-  //   return savedContacts ? JSON.parse(savedContacts) : initialContacts;
-  // });
-  // useEffect(() => {
-  //   window.localStorage.setItem("saved-contacts", JSON.stringify(contacts));
-  // }, [contacts]);
+  // const [contacts, setContacts] = useState(initialContacts);
+
+  const [contacts, setContacts] = useState(() => {
+    const savedContacts = window.localStorage.getItem("saved-contact");
+    return savedContacts ? JSON.parse(savedContacts) : initialContacts;
+  });
+
   const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    window.localStorage.setItem("saved-contact", JSON.stringify(contacts));
+  }, [contacts]);
+
   const addContacts = (newContact) => {
     setContacts((prevContacts) => {
       return [...prevContacts, newContact];

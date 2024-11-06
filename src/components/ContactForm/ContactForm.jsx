@@ -11,10 +11,8 @@ const FeedbackSchema = Yup.object().shape({
     .max(50, "Too long!")
     .required("Required"),
   number: Yup.string()
-    .matches(
-      /^\d{3}-\d{2}-\d{2}$/,
-      "The format of the phone number must be XXX-XX-XX and contain 7 digits"
-    )
+    .min(3, "Too short!")
+    .max(50, "Too long!")
     .required("Required"),
 });
 
